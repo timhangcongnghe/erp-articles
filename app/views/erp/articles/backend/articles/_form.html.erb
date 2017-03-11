@@ -1,0 +1,56 @@
+<%= form_for([erp_articles, :backend, article], html: {multipart: true}) do |f| %>
+
+    <%= erp_form_control("fileinput", {
+        name: 'article[image]',
+        value: article.image,
+        label: t('.image')
+    }) %>
+    <div class="row">
+        <div class="col-md-6">
+            <%= erp_form_control("text", {
+                name: 'article[name]',
+                value: article.name,
+                label: t('.name'),
+                placeholder: t('.placeholder_article_name')
+            }) %>
+        </div>
+        <div class="col-md-6">
+            <%= erp_form_control("dataselect", {
+                name: 'article[category_id]',
+                value: article.category_id,
+                text: article.category_name,
+                placeholder: t('.choose_category'),
+                label: t('.category'),
+                url: erp_articles.dataselect_backend_categories_path(format: 'json'),
+                create: {
+                    url: erp_articles.new_backend_category_path,
+                    title: t('.create_category'),
+                    container_selector: '.new_category',
+                    input_selector: 'input[name="category[name]"]'
+                },
+                edit: {
+                    url: erp_articles.edit_backend_category_path(id: ':value'),
+                    title: t('.edit_category'),
+                    container_selector: '.edit_category',
+                },
+                required: true,
+                errors: article.errors.full_messages_for(:category_id)
+            }) %>
+        </div>
+    </div>
+    
+    <%= erp_form_control("editor", {
+        name: 'article[content]',
+        value: article.content,
+        label: t('.content')
+    }) %>
+                        
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_articles.backend_articles_path
+    }) %>
+    
+<% end %>

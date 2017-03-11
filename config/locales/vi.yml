@@ -1,0 +1,127 @@
+vi:
+  layouts:
+    erp:
+      backend:
+        sidebar:
+          article: "Bài viết"
+          articles: "Tất cả bài viết"
+          categories: "Tất cả chuyên mục"
+          comments: "Tất cả bình luận"
+  erp:
+    articles:
+      backend:
+        articles:
+          archive:
+            success: "Bài viết đã ngưng sử dụng thành công"
+          unarchive:
+            success: "Bài viết đã được sử dụng lại thành công"
+          archive_all:
+            success: "Bài viết đã ngưng sử dụng thành công"
+          unarchive_all:
+            success: "Bài viết đã được sử dụng lại thành công"
+          destroy:
+            success: "Bài viết đã xóa thành công"
+          destroy_all:
+            success: "Bài viết đã xóa thành công"
+          index:
+            articles: "Tất cả bài viết"
+            image: "Hình ảnh"
+            name: "Tên bài viết"
+            category: "Chuyên mục"
+            content: "Nội dung"
+            meta_keyword: "Meta Keyword"
+            meta_description: "Meta Description"
+            tags: "Thẻ"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+            archived: "Bài viết không còn sử dụng"
+            create: "Tạo bài viết"
+            archive: "Ngưng sử dụng"
+            unarchive: "Sử dụng lại"
+            delete: "Xóa bài viết"
+            archive_confirm: "Bạn muốn ngưng sử dụng bài viết?"
+            unarchive_confirm: "Bạn muốn sử dụng lại bài viết?"
+            delete_confirm: "Bạn thực sự muốn xóa bài viết?"
+          list:
+            image: "Hình ảnh"
+            name: "Tên bài viết"
+            category: "Chuyên mục"
+            content: "Nội dung"
+            meta_keyword: "Meta Keyword"
+            meta_description: "Meta Description"
+            tags: "Thẻ"
+            status: "Trạng thái"
+            creator: "Người tạo"
+            created_at: "Ngày tạo"
+            actions: "Thao tác"
+            no_matching_records_found: "Danh sách bài viết không được tìm thấy"
+            active: "Đang sử dụng"
+            archived: "Ngưng sử dụng"
+            edit: "Chỉnh sửa"
+            archive: "Ngưng sử dụng"
+            unarchive: "Sử dụng lại"
+            delete: "Xóa bài viết"
+            archive_confirm: "Bạn muốn ngưng sử dụng bài viết?"
+            unarchive_confirm: "Bạn muốn sử dụng lại bài viết?"
+            delete_confirm: "Bạn thực sự muốn xóa bài viết?"
+          new:
+            articles: "Tất cả bài viết"
+            create: "Tạo bài viết"
+          edit:
+            articles: "Tất cả bài viết"
+            edit: "Chỉnh sửa bài viết"
+            create: "Thêm bài viết"
+          form:
+            image: "Hình ảnh"
+            name: "Tên bài viết"
+            category: "Chuyên mục"
+            content: "Nội dung"
+            meta_keyword: "Meta Keyword"
+            meta_description: "Meta Description"
+            tags: "Thẻ"
+            placeholder_article_name: "Nhập tên/tiêu đề bài viết"
+            choose_category: "Chọn chuyên mục bài viết"
+            create_category: "Thêm chuyên mục"
+            edit_category: "Sửa chuyên mục"
+        categories:
+          archive:
+            success: "Chuyên mục đã ngưng sử dụng thành công"
+          unarchive:
+            success: "Chuyên mục đã được sử dụng lại thành công"
+          archive_all:
+            success: "Chuyên mục đã ngưng sử dụng thành công"
+          unarchive_all:
+            success: "Chuyên mục đã được sử dụng lại thành công"
+          destroy:
+            success: "Chuyên mục đã xóa thành công"
+          destroy_all:
+            success: "Chuyên mục đã xóa thành công"
+          index:
+            categories: "Tất cả chuyên mục"
+            create: "Tạo chuyên mục"
+            archive_confirm: "Bạn chắc chắn muốn ngưng sử dụng chuyên mục?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại chuyên mục?"
+            delete: "Xóa chuyên mục"
+            delete_confirm: "Bạn chắc chắn muốn xóa chuyên mục?"
+            name: "Tên chuyên mục"
+            parent_category: "Chuyên mục cha"
+          list:
+            name: "Tên chuyên mục"
+            archive_confirm: "Bạn chắc chắn muốn ngưng sử dụng chuyên mục?"
+            unarchive_confirm: "Bạn chắc chắn muốn sử dụng lại chuyên mục?"
+            delete: "Xóa chuyên mục"
+            delete_confirm: "Bạn chắc chắn muốn xóa chuyên mục?"
+            no_matching_records_found: "Không tìm thấy chuyên mục nào phù hợp"
+          new:
+            categories: "Tất cả chuyên mục"
+            create: "Tạo chuyên mục"
+          edit:
+            categories: "Tất cả chuyên mục"
+            create: "Thêm chuyên mục"
+          form:
+            name: "Tên chuyên mục"
+            parent_category: "Chuyên mục cha"
+            placeholder_name: "Nhập tên chuyên mục"
+            placeholder_parent_category: "Chọn chuyên mục cha (nếu có)"
+            create: "Thêm chuyên mục"

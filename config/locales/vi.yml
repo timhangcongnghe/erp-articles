@@ -1,4 +1,13 @@
 vi:
+  blog: "Bài viết - Tin tức"
+  faq: "Câu hỏi thường gặp"
+  policy: "Chính sách"
+  warranty: "Chính sách bảo hành"
+  payment: "Quy định & chính sách thanh toán"
+  delivery: "Chính sách vận chuyển, giao nhận"
+  return_refund: "Chính sách đổi trả hàng & hoàn tiền"
+  security: "Bảo mật thông tin"
+  terms_conditions: "Điều khoản & Điều kiện"
   layouts:
     erp:
       backend:
@@ -125,3 +134,4 @@ vi:
             placeholder_name: "Nhập tên chuyên mục"
             placeholder_parent_category: "Chọn chuyên mục cha (nếu có)"
             create: "Thêm chuyên mục"
+            alias: "Alias chuyên mục"

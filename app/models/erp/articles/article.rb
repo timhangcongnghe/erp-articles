@@ -5,6 +5,10 @@ module Erp::Articles
     mount_uploader :image, Erp::Articles::ArticleUploader
     
     def self.search(params)
+			self.all
+		end
+    
+    def self.get_all_blogs(params)
 			if params[:cat_id].present?
 				query = self.where(category_id: params[:cat_id])
 			else

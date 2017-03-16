@@ -6,10 +6,11 @@ module Erp::Articles
     
     def self.search(params)
 			if params[:cat_id].present?
-				self.where(category_id: params[:cat_id])
+				query = self.where(category_id: params[:cat_id])
 			else
-				self.all
+				query = self.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_BLOG)
 			end
+			query = query.order('created_at DESC')
     end
     
     # data for dataselect ajax
@@ -46,6 +47,23 @@ module Erp::Articles
     
     def post_by
 			creator.present? ? creator.name : ''
+		end
+    
+    # get newest articles
+    def self.newest_articles(limit=nil)
+			records = self.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_BLOG)
+			records = records.limit(limit).order('created_at DESC')
+			return records
+		end
+    
+    # get terms and conditions
+    def self.get_terms_and_conditions
+			self.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_TERMS_CONDITIONS)
+		end
+    
+    # get terms and conditions
+    def self.get_faqs
+			self.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_FAQ)
 		end
   end
 end

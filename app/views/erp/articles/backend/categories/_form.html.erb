@@ -21,6 +21,12 @@
             input_selector: 'input[name="category[name]"]'
         }
     }) %>
+    <%= erp_form_control('select', {
+        label: t('.alias'),
+        name: 'category[alias]',
+        value: category.alias,
+        options: Erp::Articles::Category.get_alias_options()
+    }) %>
     <hr>
     <%= erp_component('button/save', {
         text: t('submit')

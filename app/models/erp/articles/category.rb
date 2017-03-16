@@ -3,7 +3,33 @@ module Erp::Articles
     belongs_to :creator, class_name: "Erp::User"
     belongs_to :parent, class_name: "Erp::Articles::Category", optional: true
     has_many :children, class_name: "Erp::Articles::Category", foreign_key: "parent_id"
+    has_many :articles, class_name: "Erp::Articles::Article"
     validates :name, :presence => true
+    
+    # class const
+    ALIAS_BLOG = 'blog'
+    ALIAS_FAQ = 'faq'
+    ALIAS_TERMS_CONDITIONS = 'terms_conditions'
+    ALIAS_WARRANTY = 'warranty'
+    ALIAS_PAYMENT = 'payment'
+    ALIAS_DELIVERY = 'delivery'
+    ALIAS_RETURN_REFUND = 'return_refund'
+    ALIAS_SECURITY = 'security'
+    ALIAS_POLICY_GROUP = [ALIAS_WARRANTY, ALIAS_PAYMENT, ALIAS_DELIVERY, ALIAS_RETURN_REFUND, ALIAS_SECURITY]
+    
+    # get alias for contact
+    def self.get_alias_options()
+      [
+        {text: I18n.t('blog'),value: self::ALIAS_BLOG},
+        {text: I18n.t('faq'),value: self::ALIAS_FAQ},
+        {text: I18n.t('warranty'),value: self::ALIAS_WARRANTY},
+        {text: I18n.t('payment'),value: self::ALIAS_PAYMENT},
+        {text: I18n.t('delivery'),value: self::ALIAS_DELIVERY},
+        {text: I18n.t('return_refund'),value: self::ALIAS_RETURN_REFUND},
+        {text: I18n.t('security'),value: self::ALIAS_SECURITY},
+        {text: I18n.t('terms_conditions'),value: self::ALIAS_TERMS_CONDITIONS}
+      ]
+    end
     
     # Filters
     def self.filter(query, params)
@@ -121,6 +147,11 @@ module Erp::Articles
 				p = p.parent
 			end
 			names.reverse.join(" / ")
+		end
+    
+    #
+    def self.get_categories_by_alias_group
+			self.where(alias: Erp::Articles::Category::ALIAS_POLICY_GROUP)
 		end
   end
 end

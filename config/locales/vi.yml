@@ -135,3 +135,37 @@ vi:
             placeholder_parent_category: "Chọn chuyên mục cha (nếu có)"
             create: "Thêm chuyên mục"
             alias: "Alias chuyên mục"
+        comments:
+          destroy:
+            success: "Xóa bình luận thành công."
+          archive:
+            success: "Ẩn bình luận thành công."
+          unarchive:
+            success: "Hiện bình luận thành công."
+          delete_all:
+            success: "Xóa bình luận thành công."
+          archive_all:
+            success: "Ẩn bình luận thành công."
+          unarchive_all:
+            success: "Hiện bình luận thành công."
+          index:
+            comments: "Tất cả bình luận"
+            name: "Người bình luận"
+            article: "Bài viết"
+            message: "Nội dung"
+            archive: "Ẩn bình luận"
+            archive_confirm: "Bạn có muốn ẩn nội dung bình luận này?"
+            unarchive: "Hiện bình luận"
+            unarchive_confirm: "Bạn có muốn hiển thị nội dung bình luận này?"
+            delete: "Xóa bình luận"
+            delete_confirm: "Bạn thực sự muốn xóa nội dung bình luận này?"
+          list:
+            name: "Người bình luận"
+            article: "Bài viết"
+            message: "Nội dung"
+            archive: "Ẩn bình luận"
+            archive_confirm: "Bạn có muốn ẩn nội dung bình luận này?"
+            unarchive: "Hiện bình luận"
+            unarchive_confirm: "Bạn có muốn hiển thị nội dung bình luận này?"
+            delete: "Xóa bình luận"
+            delete_confirm: "Bạn thực sự muốn xóa nội dung bình luận này?"

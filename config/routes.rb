@@ -27,6 +27,10 @@ Erp::Articles::Engine.routes.draw do
         collection do
           post 'list'
           delete 'delete_all'
+          put 'archive_all'
+          put 'unarchive_all'
+          put 'archive'
+          put 'unarchive'
         end
       end
     end

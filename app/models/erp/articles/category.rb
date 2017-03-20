@@ -105,18 +105,6 @@ module Erp::Articles
       query = query.limit(8).map{|category| {value: category.id, text: category.name} }
     end
     
-    # data for dataselect ajax
-    def self.dataselect(keyword='')
-      query = self.all
-      
-      if keyword.present?
-        keyword = keyword.strip.downcase
-        query = query.where('LOWER(name) LIKE ?', "%#{keyword}%")
-      end
-      
-      query = query.limit(8).map{|category| {value: category.id, text: category.name} }
-    end
-    
     def archive
 			update_columns(archived: true)
 		end

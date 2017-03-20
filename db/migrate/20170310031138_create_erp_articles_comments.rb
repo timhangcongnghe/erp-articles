@@ -4,6 +4,8 @@ class CreateErpArticlesComments < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.text :message
+      t.integer :parent_id
+      t.boolean :archived, default: false
       t.references :article, index: true, references: :erp_articles_articles
 
       t.timestamps

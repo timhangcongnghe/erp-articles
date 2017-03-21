@@ -53,7 +53,7 @@ module Erp::Articles
     end
     
     def self.search(params)
-      query = self.all
+      query = self.where(parent_id: nil)
       query = self.filter(query, params)
       
       # order

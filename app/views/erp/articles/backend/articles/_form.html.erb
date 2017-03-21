@@ -14,6 +14,7 @@
                 placeholder: t('.placeholder_article_name')
             }) %>
         </div>
+            
         <div class="col-md-6">
             <%= erp_form_control("dataselect", {
                 name: 'article[category_id]',
@@ -35,6 +36,36 @@
                 },
                 required: true,
                 errors: article.errors.full_messages_for(:category_id)
+            }) %>
+        </div>
+        
+        <div class="col-md-6">
+            <%= erp_form_control("text", {
+                name: 'article[meta_keywords]',
+                value: article.meta_keywords,
+                label: t('.meta_keywords'),
+                help: t('.help_meta_keywords'),
+                placeholder: t('.placeholder_meta_keywords')
+            }) %>
+        </div>
+        
+        <div class="col-md-6">
+            <%= erp_form_control("text", {
+                name: 'article[meta_description]',
+                value: article.meta_description,
+                label: t('.meta_description'),
+                help: t('.help_meta_description'),
+                placeholder: t('.placeholder_meta_description')
+            }) %>
+        </div>
+        
+        <div class="col-md-12">
+            <%= erp_form_control("text", {
+                name: 'article[tags]',
+                value: article.tags,
+                label: t('.tags'),
+                help: t('.help_tags'),
+                placeholder: t('.placeholder_tags')
             }) %>
         </div>
     </div>

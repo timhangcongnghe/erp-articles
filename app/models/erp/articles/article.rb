@@ -70,5 +70,10 @@ module Erp::Articles
     def self.get_faqs
 			self.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_FAQ)
 		end
+    
+    # get tags
+    def get_tags
+			tags.to_s.split(/[\,\;]/).select {|c| c.present? }
+		end
   end
 end

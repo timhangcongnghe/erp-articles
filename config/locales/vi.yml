@@ -169,3 +169,11 @@ vi:
             unarchive_confirm: "Bạn có muốn hiển thị nội dung bình luận này?"
             delete: "Xóa bình luận"
             delete_confirm: "Bạn thực sự muốn xóa nội dung bình luận này?"
+          children_comments:
+            name: "Người trả lời"
+            message: "Nội dung"
+            status: "Trạng thái"
+            created_at: "Ngày tạo"
+            actions: "Thao tác"
+            archived: "Không hiển thị"
+            active: "Đang hiển thị"

@@ -31,6 +31,7 @@ Erp::Articles::Engine.routes.draw do
           put 'unarchive_all'
           put 'archive'
           put 'unarchive'
+          get 'children_comments'
         end
       end
     end

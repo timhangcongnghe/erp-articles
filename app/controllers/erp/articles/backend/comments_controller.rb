@@ -11,6 +11,12 @@ module Erp
           
           render layout: nil
         end
+        
+        def children_comments
+          @comment = Erp::Articles::Comment.find(params[:id])
+          
+          render layout: nil
+        end
     
         # DELETE /comments/1
         def destroy

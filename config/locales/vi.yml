@@ -93,6 +93,14 @@ vi:
             choose_category: "Chọn chuyên mục bài viết"
             create_category: "Thêm chuyên mục"
             edit_category: "Sửa chuyên mục"
+            meta_keywords: "Meta Keywords"
+            help_meta_keywords: "Sử dụng để SEO"
+            placeholder_meta_keywords: "Nhập từ khóa meta keyworks..."
+            meta_description: "Meta Description"
+            help_meta_description: "Sử dụng để SEO"
+            placeholder_meta_description: "Nhập từ khóa meta description..."
+            help_tags: "Các thẻ phân tách nhau bởi dấu phẩy ( , )"
+            placeholder_tags: "Nhập danh sách các thẻ cho bài viết"
         categories:
           archive:
             success: "Chuyên mục đã ngưng sử dụng thành công"

@@ -4,7 +4,7 @@ class CreateErpArticlesArticles < ActiveRecord::Migration[5.0]
       t.string :image
       t.string :name
       t.text :content
-      t.string :meta_keyword
+      t.string :meta_keywords
       t.string :meta_description
       t.string :tags
       t.boolean :archived, default: false

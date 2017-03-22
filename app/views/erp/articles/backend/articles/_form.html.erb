@@ -1,5 +1,4 @@
 <%= form_for([erp_articles, :backend, article], html: {multipart: true}) do |f| %>
-
     <%= erp_form_control("fileinput", {
         name: 'article[image]',
         value: article.image,
@@ -13,8 +12,7 @@
                 label: t('.name'),
                 placeholder: t('.placeholder_article_name')
             }) %>
-        </div>
-            
+        </div>            
         <div class="col-md-6">
             <%= erp_form_control("dataselect", {
                 name: 'article[category_id]',
@@ -37,8 +35,7 @@
                 required: true,
                 errors: article.errors.full_messages_for(:category_id)
             }) %>
-        </div>
-        
+        </div>        
         <div class="col-md-6">
             <%= erp_form_control("text", {
                 name: 'article[meta_keywords]',
@@ -47,8 +44,7 @@
                 help: t('.help_meta_keywords'),
                 placeholder: t('.placeholder_meta_keywords')
             }) %>
-        </div>
-        
+        </div>        
         <div class="col-md-6">
             <%= erp_form_control("text", {
                 name: 'article[meta_description]',
@@ -57,8 +53,7 @@
                 help: t('.help_meta_description'),
                 placeholder: t('.placeholder_meta_description')
             }) %>
-        </div>
-        
+        </div>        
         <div class="col-md-12">
             <%= erp_form_control("text", {
                 name: 'article[tags]',
@@ -68,20 +63,17 @@
                 placeholder: t('.placeholder_tags')
             }) %>
         </div>
-    </div>
-    
+    </div>    
     <%= erp_form_control("editor", {
         name: 'article[content]',
         value: article.content,
         label: t('.content')
-    }) %>
-                        
+    }) %>                    
     <%= erp_component('button/save', {
         text: t('submit')
     }) %>
     <%= erp_component('button/cancel', {
         text: t('cancel'),
         href: erp_articles.backend_articles_path
-    }) %>
-    
+    }) %>    
 <% end %>

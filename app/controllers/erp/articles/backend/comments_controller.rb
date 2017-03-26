@@ -121,11 +121,6 @@ module Erp
           def set_comments
             @comments = Comment.where(id: params[:ids])
           end
-    
-          # Only allow a trusted parameter "white list" through.
-          def comment_params
-            params.fetch(:comment, {}).permit(:name, :message, :article_id)
-          end
       end
     end
   end

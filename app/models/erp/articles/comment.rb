@@ -2,9 +2,9 @@ module Erp::Articles
   class Comment < ApplicationRecord
     belongs_to :article, class_name: "Erp::Articles::Article"
     belongs_to :parent, class_name: "Erp::Articles::Comment", optional: true
+    belongs_to :user, class_name: "Erp::User"
     has_many :children, class_name: "Erp::Articles::Comment", foreign_key: "parent_id"
-    validates :name, :email, :message, :presence => true
-    validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+    validates :message, :presence => true
     
     # Filters
     def self.filter(query, params)
@@ -84,8 +84,14 @@ module Erp::Articles
 			update_all(archived: false)
 		end
     
+    # display article name
     def article_name
 			article.present? ? article.name : ''
+		end
+    
+    # display user name
+    def user_name
+			user.present? ? user.name : ''
 		end
   end
 end

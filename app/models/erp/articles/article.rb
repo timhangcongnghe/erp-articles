@@ -2,7 +2,7 @@ module Erp::Articles
   class Article < ApplicationRecord
     belongs_to :creator, class_name: "Erp::User"
     belongs_to :category
-    has_many :comments, class_name: "Erp::Articles::Comment"
+    has_many :comments, class_name: "Erp::Articles::Comment", dependent: :destroy
     mount_uploader :image, Erp::Articles::ArticleUploader
     
     def self.search(params)

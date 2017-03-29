@@ -3,7 +3,7 @@ module Erp::Articles
     belongs_to :article, class_name: "Erp::Articles::Article"
     belongs_to :parent, class_name: "Erp::Articles::Comment", optional: true
     belongs_to :user, class_name: "Erp::User"
-    has_many :children, class_name: "Erp::Articles::Comment", foreign_key: "parent_id"
+    has_many :children, class_name: "Erp::Articles::Comment", foreign_key: "parent_id", dependent: :destroy
     validates :message, :presence => true
     
     # Filters
@@ -92,6 +92,11 @@ module Erp::Articles
     # display user name
     def user_name
 			user.present? ? user.name : ''
+		end
+    
+    # display user email
+    def user_email
+			user.present? ? user.email : ''
 		end
   end
 end

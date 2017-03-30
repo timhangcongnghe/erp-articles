@@ -18,8 +18,10 @@ category6 = Erp::Articles::Category.create(name: "Các điều khoản & Điều
 Erp::Articles::Category.where(name: "Câu hỏi thường gặp").destroy_all
 category7 = Erp::Articles::Category.create(name: "Câu hỏi thường gặp", alias: Erp::Articles::Category::ALIAS_FAQ, creator_id: user.id)
 
-Erp::Articles::Category.where(name: "Khám phá").destroy_all
-category8 = Erp::Articles::Category.create(name: "Khám phá", alias: Erp::Articles::Category::ALIAS_BLOG, creator_id: user.id)
+Erp::Articles::Category.where(name: "Tín đồ công nghệ").destroy_all
+category8 = Erp::Articles::Category.create(name: "Tín đồ công nghệ", alias: Erp::Articles::Category::ALIAS_BLOG, creator_id: user.id)
+Erp::Articles::Category.where(name: "Chia sẻ kinh nghiệm").destroy_all
+category9 = Erp::Articles::Category.create(name: "Chia sẻ kinh nghiệm", alias: Erp::Articles::Category::ALIAS_BLOG, creator_id: user.id)
 
 puts "Create sample articles"
 Erp::Articles::Article.where(name: "Chính sách bảo hành").destroy_all
@@ -41,8 +43,12 @@ article7 = Erp::Articles::Article.create(name: "Câu hỏi thứ nhất", conten
 Erp::Articles::Article.where(name: "Câu hỏi thứ hai").destroy_all
 article7 = Erp::Articles::Article.create(name: "Câu hỏi thứ hai", content: "Đang cập nhật...", category_id: category7.id, creator_id: user.id)
 
-Erp::Articles::Article.where(name: "Mark Zuckerberg đang thực hiện đúng chiến thuật của người La Mã cách đây 2.300 năm để hủy diệt các đối thủ").destroy_all
+Erp::Articles::Article.where(name: "Sự kiện ra mắt TimHangCongNghe.vn").destroy_all
 article8 = Erp::Articles::Article.create(
-            name: "Mark Zuckerberg đang thực hiện đúng chiến thuật của người La Mã cách đây 2.300 năm để hủy diệt các đối thủ",
-            content: "<p>C&acirc;u n&oacute;i &ldquo;Lịch sử tự lặp lại ch&iacute;nh n&oacute; &ndash; History repeats itself&rdquo; vẫn được nhắc đi nhắc lại mỗi lần ta n&oacute;i tới lịch sử. H&atilde;y nhắc lại ch&uacute;t &iacute;t về La M&atilde;, đế quốc h&ugrave;ng mạnh v&agrave; rộng lớn bậc nhất trong lịch sử.</p>\r\n<p>Trong chiến tranh với người Carthage, hay c&ograve;n được biết tới với c&aacute;i t&ecirc;n chiến tranh Punic, người La M&atilde; với gươm v&agrave; ngựa đ&atilde; thua tr&ecirc;n mặt nước &ndash; địa h&igrave;nh chiến đấu m&agrave; thủy qu&acirc;n của Carthage tỏ r&otilde; sức mạnh vượt trội.</p>",
+            name: "Sự kiện ra mắt TimHangCongNghe.vn",
+            content: "<p>Nội dung đang được cập nhật...</p>",
             category_id: category8.id, creator_id: user.id)
+article9 = Erp::Articles::Article.create(
+            name: "Giải pháp tối ưu dành cho các tín đồ yêu công nghệ",
+            content: "<p>Nội dung đang được cập nhật...</p>",
+            category_id: category9.id, creator_id: user.id)

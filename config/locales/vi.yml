@@ -20,6 +20,10 @@ vi:
     articles:
       backend:
         articles:
+          create:
+            success: "Bài viết được tạo thành công."
+          update:
+            success: "Bài viết cập nhật thành công."
           archive:
             success: "Bài viết đã ngưng sử dụng thành công"
           unarchive:

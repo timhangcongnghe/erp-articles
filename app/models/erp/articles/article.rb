@@ -46,6 +46,10 @@ module Erp::Articles
 			update_all(archived: false)
 		end
     
+    def category_id
+      category.present? ? category.id : ''
+    end
+    
     def category_name
       category.present? ? category.name : ''
     end

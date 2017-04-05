@@ -31,6 +31,11 @@ module Erp::Articles
       ]
     end
     
+    # get categories active
+    def self.get_active
+			self.where(archived: false).order("created_at DESC")
+		end
+    
     # Filters
     def self.filter(query, params)
       params = params.to_unsafe_hash
@@ -140,6 +145,11 @@ module Erp::Articles
     #
     def self.get_categories_by_alias_group
 			self.where(alias: Erp::Articles::Category::ALIAS_POLICY_GROUP)
+		end
+    
+    def self.get_categories_by_alias_blog
+			query = self.get_active
+			query = query.where(alias: Erp::Articles::Category::ALIAS_BLOG)
 		end
   end
 end

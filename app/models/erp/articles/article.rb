@@ -9,14 +9,10 @@ module Erp::Articles
 			self.all
 		end
     
-    def self.get_all_blogs(params)
-			if params[:cat_id].present?
-				query = self.where(category_id: params[:cat_id])
-			else
-				query = self.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_BLOG)
-			end
-			query = query.order('created_at DESC')
-    end
+    # get articles active
+    def self.get_active
+			self.where(archived: false).order("created_at DESC")
+		end
     
     # data for dataselect ajax
     def self.dataselect(keyword='')
@@ -58,11 +54,21 @@ module Erp::Articles
 			creator.present? ? creator.name : ''
 		end
     
+    # get all blogs
+    def self.get_all_blogs(params)
+			query = self.get_active
+			if params[:cat_id].present?
+				query = query.where(category_id: params[:cat_id])
+			else
+				query = query.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_BLOG)
+			end
+			query = query.order('created_at DESC')
+    end
+    
     # get newest articles
     def self.newest_articles(limit=nil)
-			records = self.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_BLOG)
-			records = records.limit(limit).order('created_at DESC')
-			return records
+			records = self.get_active.order('created_at DESC')
+			records = records.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_BLOG).limit(limit)
 		end
     
     # get terms and conditions

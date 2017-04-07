@@ -50,7 +50,7 @@ module Erp
       # end
       
       version :system do
-        process resize_to_fill: [60, 60]
+        process resize_to_fill: [150, 150]
       end
       
       version :small do

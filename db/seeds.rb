@@ -48,7 +48,18 @@ article8 = Erp::Articles::Article.create(
             name: "Sự kiện ra mắt TimHangCongNghe.vn",
             content: "<p>Nội dung đang được cập nhật...</p>",
             category_id: category8.id, creator_id: user.id)
+Erp::Articles::Article.where(name: "Giải pháp tối ưu dành cho các tín đồ yêu công nghệ").destroy_all
 article9 = Erp::Articles::Article.create(
             name: "Giải pháp tối ưu dành cho các tín đồ yêu công nghệ",
+            content: "<p>Nội dung đang được cập nhật...</p>",
+            category_id: category9.id, creator_id: user.id)
+Erp::Articles::Article.where(name: "Marchex Launches Call Analytics For Search").destroy_all
+article8 = Erp::Articles::Article.create(
+            name: "Marchex Launches Call Analytics For Search",
+            content: "<p>Nội dung đang được cập nhật...</p>",
+            category_id: category8.id, creator_id: user.id)
+Erp::Articles::Article.where(name: "Google ra mắt Jamboard - đối thủ của Microsoft Surface Hub").destroy_all
+article9 = Erp::Articles::Article.create(
+            name: "Google ra mắt Jamboard - đối thủ của Microsoft Surface Hub",
             content: "<p>Nội dung đang được cập nhật...</p>",
             category_id: category9.id, creator_id: user.id)

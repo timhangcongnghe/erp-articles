@@ -15,7 +15,8 @@ module Erp::Articles
     ALIAS_DELIVERY = 'delivery'
     ALIAS_RETURN_REFUND = 'return_refund'
     ALIAS_SECURITY = 'security'
-    ALIAS_POLICY_GROUP = [ALIAS_WARRANTY, ALIAS_PAYMENT, ALIAS_DELIVERY, ALIAS_RETURN_REFUND, ALIAS_SECURITY]
+    ALIAS_SHOPPING_GUIDE = 'shopping_guide'
+    ALIAS_POLICY_GROUP = [ALIAS_WARRANTY, ALIAS_PAYMENT, ALIAS_DELIVERY, ALIAS_RETURN_REFUND, ALIAS_SECURITY, ALIAS_SHOPPING_GUIDE]
     
     # get alias for contact
     def self.get_alias_options()
@@ -27,7 +28,8 @@ module Erp::Articles
         {text: I18n.t('delivery'),value: self::ALIAS_DELIVERY},
         {text: I18n.t('return_refund'),value: self::ALIAS_RETURN_REFUND},
         {text: I18n.t('security'),value: self::ALIAS_SECURITY},
-        {text: I18n.t('terms_conditions'),value: self::ALIAS_TERMS_CONDITIONS}
+        {text: I18n.t('terms_conditions'),value: self::ALIAS_TERMS_CONDITIONS},
+        {text: I18n.t('shopping_guide'),value: self::ALIAS_SHOPPING_GUIDE}
       ]
     end
     

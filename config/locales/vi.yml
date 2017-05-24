@@ -8,6 +8,7 @@ vi:
   return_refund: "Chính sách đổi trả hàng & hoàn tiền"
   security: "Bảo mật thông tin"
   terms_conditions: "Điều khoản & Điều kiện"
+  shopping_guide: "Hướng dẫn mua hàng"
   layouts:
     erp:
       backend:

@@ -25,7 +25,15 @@
             name: 'erp_articles_categories.name',
             select: {
                 name: 'erp_articles_categories.id',
-                data_url: ''
+                data_url: erp_articles.dataselect_backend_categories_path
+            }
+        },
+        {
+            text: t('creator'),
+            name: 'erp_users.name',
+            select: {
+                name: 'erp_users.id',
+                data_url: erp.dataselect_backend_users_path
             }
         }
     ],

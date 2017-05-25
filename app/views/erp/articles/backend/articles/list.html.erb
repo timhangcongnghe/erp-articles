@@ -74,7 +74,7 @@
                         <td><%= article.category_name %></td>
                     <% end %>
                     <% if get_columns(params).include?("content") %>
-                        <td><%= article.content %></td>
+                        <td><%= short_text(article.content, 15) %>...</td>
                     <% end %>
                     <% if get_columns(params).include?("meta_keyword") %>
                         <td><%= article.meta_keyword %></td>

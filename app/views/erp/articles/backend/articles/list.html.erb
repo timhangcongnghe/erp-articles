@@ -55,6 +55,9 @@
                         <%= t('.created_at') %>
                     </th>
                 <% end %>
+                <th width="7%" class="sortable text-nowrap" sort-by='erp_articles_articles.custom_order'>
+                    <%= t('custom_order') %>
+                </th>
                 <th width="7%"><%= t('.actions') %></th>
             </tr>
         </thead>
@@ -94,7 +97,7 @@
                         <span class="label label-sm label-danger"><%= t('.archived') %></span>
                         <% else %>
                         <span class="label label-sm label-success"><%= t('.active') %></span>
-                        <% end %> 
+                        <% end %>
                     </td>
                     <% end %>
                     <% if get_columns(params).include?("creator") %>
@@ -107,6 +110,14 @@
                     <% if get_columns(params).include?("created_at") %>
                         <td><%= article.created_at.strftime("%d/%m/%Y") %></td>
                     <% end %>
+                    <td class="text-center text-semibold">
+                        <%= erp_datalist_order_column({
+                            item: article,
+                            move_up_url: erp_articles.move_up_backend_articles_path(id: article),
+                            move_down_url: erp_articles.move_down_backend_articles_path(id: article),
+                            sort_by: 'erp_articles_articles.custom_order'
+                        }) %>
+                    </td>
                     <td>
                         <%= erp_datalist_row_actions(
                             [
@@ -143,7 +154,7 @@
                             ]
                         ) %>
                     </td>
-                </tr>            
+                </tr>
             <% end %>
         </tbody>
     </table>
@@ -151,5 +162,5 @@
         <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
     <% end %>
 </div>
-        
+
 <%= erp_datalist_pagination(@articles) %>

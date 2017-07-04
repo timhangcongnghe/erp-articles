@@ -9,6 +9,7 @@ vi:
   security: "Bảo mật thông tin"
   terms_conditions: "Điều khoản & Điều kiện"
   shopping_guide: "Hướng dẫn mua hàng"
+  operating_regulations: "Quy chế hoạt động GD TMĐT"
   layouts:
     erp:
       backend:
@@ -105,6 +106,10 @@ vi:
             help_tags: "Các thẻ phân tách nhau bởi dấu phẩy , hoặc ;"
             placeholder_tags: "Nhập danh sách các thẻ cho bài viết"
         categories:
+          create:
+            success: "Chuyên mục đã được tạo thành công"
+          update:
+            success: "Chuyên mục đã được cập nhật thành công"
           archive:
             success: "Chuyên mục đã ngưng sử dụng thành công"
           unarchive:

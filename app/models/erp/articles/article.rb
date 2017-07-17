@@ -9,7 +9,7 @@ module Erp::Articles
 
     # get articles active
     def self.get_active
-			self.where(archived: false).order("created_at DESC")
+			self.where(archived: false)
 		end
 
     # Filters
@@ -125,12 +125,12 @@ module Erp::Articles
 			else
 				query = query.joins(:category).where('erp_articles_categories.alias = ?', Erp::Articles::Category::ALIAS_BLOG)
 			end
-			query = query.order('created_at DESC')
+			query = query.order('erp_articles_articles.created_at DESC')
     end
 
     # get newest articles
     def self.newest_articles(limit=nil)
-			records = self.get_active.order('created_at DESC')
+			records = self.get_active.order('erp_articles_articles.created_at DESC')
 			records = records.joins(:category).where("erp_articles_categories.alias = ?", Erp::Articles::Category::ALIAS_BLOG).limit(limit)
 		end
 

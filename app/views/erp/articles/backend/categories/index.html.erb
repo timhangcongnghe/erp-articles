@@ -14,6 +14,20 @@
     }) %>
 <% end %>
 
+<% content_for :global_filter do %>
+    <div class="row">
+        <div class="col-md-3">
+            <%= erp_form_control('select', {
+                name: 'alias',
+                label: 'Alias chuyên mục',
+                placeholder: 'Chọn loại chuyên mục',
+                options: Erp::Articles::Category.get_alias_options,
+                multiple: true
+            }) %>
+        </div>
+    </div>
+<% end %>
+
 <%= erp_datalist(
     url: erp_articles.list_backend_categories_path,
     keywords: [
@@ -29,29 +43,6 @@
             }
         }
     ],
-    actions: [
-        {
-            text: '<i class="fa fa-eye-slash"></i> '+t('archive'),
-            url: erp_articles.archive_all_backend_categories_path,
-            data_method: 'PUT',
-            data_confirm: t('.archive_confirm')
-        },
-        {
-            text: '<i class="fa fa-eye"></i> '+t('unarchive'),
-            url: erp_articles.unarchive_all_backend_categories_path,
-            data_method: 'PUT',
-            data_confirm: t('.unarchive_confirm')
-        },
-        {
-            divider: true
-        },
-        {
-            text: '<i class="fa fa-trash"></i> '+t('.delete'),
-            url: erp_articles.delete_all_backend_categories_path,
-            data_method: 'DELETE',
-            data_confirm: t('delete_confirm')
-        }
-    ],
     filters: [
         {
             text: t('archived'), name: 'show_archived', value: true, checked: false
@@ -60,6 +51,9 @@
     columns: [
         {
             text: t('.name'), name: 'name', value: true, checked: true
+        },
+        {
+            text: t('.alias'), name: 'alias', value: true, checked: true
         },
         {
             text: t('status'), name: 'status', value: true, checked: true

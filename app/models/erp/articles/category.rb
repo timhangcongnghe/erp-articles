@@ -84,6 +84,19 @@ module Erp::Articles
 
       query = query.where(and_conds.join(' AND ')) if !and_conds.empty?
       
+      # global filter
+      global_filter = params[:global_filter]
+
+      if global_filter.present?
+
+				# filter by alias
+				if global_filter[:alias].present?
+					query = query.where(alias: global_filter[:alias])
+				end
+
+			end
+      # end// global filter
+      
       return query
     end
     

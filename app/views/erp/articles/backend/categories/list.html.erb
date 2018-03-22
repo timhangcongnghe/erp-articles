@@ -15,6 +15,11 @@
                     <%= t('.description') %>
                 </th>
             <% end %>
+            <% if get_columns(params).include?("alias") %>
+                <th>
+                    <%= t('.alias') %>
+                </th>
+            <% end %>
             <% if get_columns(params).include?("status") %>
                 <th>
                     <%= t('status') %>
@@ -44,6 +49,9 @@
                 <% end %>
                 <% if get_columns(params).include?("description") %>
                     <td><%= category.description %></td>
+                <% end %>
+                <% if get_columns(params).include?("alias") %>
+                    <td><%= t(".#{category.alias}") %></td>
                 <% end %>
                 <% if get_columns(params).include?("status") %>
                 <td>

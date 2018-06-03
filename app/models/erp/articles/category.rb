@@ -7,6 +7,7 @@ module Erp::Articles
     validates :name, :presence => true
     
     # class const
+    ALIAS_ABOUT_US = 'about_us'
     ALIAS_CAREER = 'career'
     ALIAS_BLOG = 'blog'
     ALIAS_FAQ = 'faq'

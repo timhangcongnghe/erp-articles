@@ -11,6 +11,7 @@ module Erp::Articles
     # class const
     ALIAS_HOME_ABOUT = 'home_about'
     ALIAS_SERVICE = 'service'
+    ALIAS_IDENTITY = 'identity'
     ALIAS_ABOUT_US = 'about_us'
     ALIAS_CAREER = 'career'
     ALIAS_BLOG = 'blog'

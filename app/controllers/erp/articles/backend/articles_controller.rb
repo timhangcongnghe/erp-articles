@@ -205,7 +205,8 @@ module Erp
           # Only allow a trusted parameter "white list" through.
           def article_params
             params.fetch(:article, {}).permit(:image, :name, :content, :meta_keywords, :meta_description, :tags, :category_id,
-                                              :show_company_structure, :show_brand_identity, :show_our_team, :parent_id)
+                                              :show_company_structure, :show_brand_identity, :show_our_team, :parent_id,
+                                              :short_content, :style_icon, :link_video)
           end
       end
     end

@@ -35,6 +35,9 @@
                     <%= t('created_at') %>
                 </th>
             <% end %>
+            <th width="7%" class="sortable text-nowrap" sort-by='erp_articles_categories.custom_order'>
+                <%= t('custom_order') %>
+            </th>
             <th width="7%"><%= t('actions') %></th>
         </tr>
     </thead>
@@ -76,6 +79,14 @@
                 <% if get_columns(params).include?("created_at") %>
                     <td><%= category.created_at.strftime("%d/%m/%Y") %></td>
                 <% end %>
+                <td class="text-center text-semibold">
+                    <%= erp_datalist_order_column({
+                        item: category,
+                        move_up_url: erp_articles.move_up_backend_categories_path(id: category),
+                        move_down_url: erp_articles.move_down_backend_categories_path(id: category),
+                        sort_by: 'erp_articles_categories.custom_order'
+                    }) %>
+                </td>
                 <td class="text-right">
                     <%= erp_datalist_row_actions(
                         [

@@ -1,5 +1,7 @@
 module Erp::Articles
   class Category < ApplicationRecord
+    include Erp::CustomOrder
+		
     belongs_to :creator, class_name: "Erp::User"
     belongs_to :parent, class_name: "Erp::Articles::Category", optional: true
     has_many :children, class_name: "Erp::Articles::Category", foreign_key: "parent_id"
@@ -41,7 +43,7 @@ module Erp::Articles
     
     # get categories active
     def self.get_active
-			self.where(archived: false).order("created_at DESC")
+			self.where(archived: false)
 		end
     
     # Filters

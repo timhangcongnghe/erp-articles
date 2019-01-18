@@ -152,6 +152,8 @@ vi:
             placeholder_parent_category: "Chọn chuyên mục cha (nếu có)"
             create: "Thêm chuyên mục"
             alias: "Alias chuyên mục"
+            description: "Mô tả / Ghi chú"
+            placeholder_description: "Nhập nội dung mô tả / hoặc ghi chú"
         comments:
           destroy:
             success: "Xóa bình luận thành công."
